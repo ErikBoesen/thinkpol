@@ -10,8 +10,12 @@ class Listener(discord.Client):
         for server in self.servers:
             print('Detecting thoughtcrime on server %s' % server.name)
 
-    async def on_message(self, message):
-        print('%s/%s#%s->%s | %s' % (message.timestamp, message.server.name if message.server else 'DM', message.channel.name, message.author.name, message.content))
+    async def on_message(self, msg):
+        print('%s/%s#%s->%s | %s' % (msg.timestamp,
+                                     msg.server.name if msg.server else 'DM',
+                                     msg.channel.name,
+                                     msg.author.name,
+                                     msg.content))
 
 
 if __name__ == '__main__':
