@@ -19,5 +19,4 @@ if __name__ == '__main__':
     parser.add_argument('token')
     args = parser.parse_args()
 
-    listener = Listener()
-    listener.run(args.token)
+    Listener().run(args.token)
