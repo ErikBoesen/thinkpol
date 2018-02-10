@@ -6,6 +6,7 @@ import argparse
 
 class Listener(discord.Client):
     async def on_ready(self):
+        print('-- Surveillance started --')
         for server in self.servers:
             print('Detecting thoughtcrime on server %s' % server.name)
 
