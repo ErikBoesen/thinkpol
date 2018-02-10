@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import datetime
+import argparse
 
 
 class Listener(discord.Client):
@@ -13,8 +14,9 @@ class Listener(discord.Client):
 
 
 if __name__ == '__main__':
-    with open('tokens.txt') as f:
-        tokens = [token for token in f.read().split('\n') if token]
+    parser = argparse.ArgumentParser()
+    parser.add_argument('token')
+    args = parser.parse_args()
 
     listener = Listener()
-    listener.run(tokens[0])
+    listener.run(args.token)
