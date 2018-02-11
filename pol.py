@@ -14,11 +14,11 @@ class Listener(discord.Client):
         sys.stdout.flush()
 
     async def on_message(self, msg):
-        sys.stdout.write('- **%s/%s#%s->%s** %s' % (msg.timestamp,
-                                                    msg.server.name if msg.server else 'DM',
-                                                    msg.channel.name,
-                                                    msg.author.name,
-                                                    msg.content))
+        sys.stdout.write('- **%s/%s#%s->%s** ```%s```\n' % (msg.timestamp,
+                                                            msg.server.name if msg.server else 'DM',
+                                                            msg.channel.name,
+                                                            msg.author.name,
+                                                            msg.content))
         sys.stdout.flush()
 
 
